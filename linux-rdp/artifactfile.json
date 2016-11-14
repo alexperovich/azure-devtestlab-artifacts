@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+  "title": "Remote Desktop",
+  "description": "Enables Remote Desktop using xrdp",
+  "iconUri": "http://www.xrdp.org/templates/rhuk_milkyway/images/xrdp_logo_nodarkfill-256x75.png",
+  "targetOsType": "Linux",
+  "parameters": {
+    "shell": {
+      "type": "string",
+      "allowedValues": [
+        "xfce",
+        "mate",
+        "unity"
+      ],
+      "description": "The desktop shell to use"
+    }
+  },
+  "runCommand": {
+    "commandToExecute": "[concat('sh install-xrdp.sh ', parameters('shell'))]"
+  }
+}
