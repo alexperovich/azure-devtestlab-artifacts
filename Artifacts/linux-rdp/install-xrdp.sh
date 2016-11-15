@@ -2,7 +2,8 @@
 
 xfce()
 {
-  apt-get install xfce4 -yq
+  apt-get install xrdp -y -qq
+  apt-get install xfce4 -y -qq
 (
 cat <<'EOF'
 #!/bin/sh
@@ -19,7 +20,21 @@ EOF
 
 unity()
 {
-  apt-get install ubuntu-desktop -yq
+  if [ $(lsb_release -si) != "Ubuntu" ]; then
+    (>&2 echo "This GUI shell only works on ubuntu")
+    exit -1
+  fi
+  if [ $(uname -m) = "x86_64" ]; then
+    ARCH=amd64
+  else
+    ARCH=i386
+  fi
+  TIGERVNCPATH=https://dl.bintray.com/tigervnc/stable/ubuntu-$(lsb_release -sr)LTS/$ARCH/tigervncserver_1.7.0-1ubuntu1_$ARCH.deb
+  curl -L $TIGERVNCPATH -o tigervncserver.deb
+  dpkg -i tigervncserver.deb
+  apt-get install -fy -qq
+  apt-get install xrdp -y -qq
+  apt-get install ubuntu-desktop -y -qq
 (
 cat <<'EOF'
 #!/bin/sh
@@ -36,7 +51,8 @@ EOF
 
 mate()
 {
-  apt-get install mate-desktop-environment -yq
+  apt-get install xrdp -y -qq
+  apt-get install mate-desktop-environment -y -qq
 (
 cat <<'EOF'
 #!/bin/sh
@@ -52,6 +68,5 @@ EOF
 }
 
 apt-get update
-apt-get install xrdp -yq
 eval $1
 service xrdp restart
