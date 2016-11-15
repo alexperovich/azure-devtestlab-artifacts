@@ -16,6 +16,6 @@
     }
   },
   "runCommand": {
-    "commandToExecute": "[concat('sh install-xrdp-with-log.sh ', parameters('shell'))]"
+    "commandToExecute": "[concat('sh run-log.sh linux-rdp.log install-xrdp.sh ', parameters('shell'))]"
   }
 }
