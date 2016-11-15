@@ -20,6 +20,7 @@ EOF
 
 unity()
 {
+  apt-get install ubuntu-desktop -y -qq
   if [ $(lsb_release -si) != "Ubuntu" ]; then
     (>&2 echo "This GUI shell only works on ubuntu")
     exit -1
@@ -34,7 +35,6 @@ unity()
   dpkg -i tigervncserver.deb
   apt-get install -fy -qq
   apt-get install xrdp -y -qq
-  apt-get install ubuntu-desktop -y -qq
 (
 cat <<'EOF'
 #!/bin/sh
