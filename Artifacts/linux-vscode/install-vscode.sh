@@ -48,6 +48,11 @@ case "$PACKAGEMANAGER" in
   apt-get install -y -qq gvfs-bin
   dpkg -i code.deb
   apt-get install -f -y -qq
+
+  # Workarround https://github.com/Microsoft/vscode/issues/3451
+  cp /usr/lib/x86_64-linux-gnu/libxcb.so.1 /usr/share/code/
+  sed -i 's/BIG-REQUESTS/_IG-REQUESTS/' /usr/share/code/libxcb.so.1
+
   ;;
 "yum")
   if [ ! -f code.rpm ]; then
