@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ARCH=$(uname -m)
-if [ ($ARCH != "x86_64") -a ($ARCH != "amd64") ]; then
+if [ ( $ARCH != "x86_64" ) -a ( $ARCH != "amd64" ) ]; then
   echo "Google Chrome is only supported on 64bit machines" 1>&2
   exit -1
 fi
