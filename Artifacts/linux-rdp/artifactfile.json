@@ -9,9 +9,9 @@
       "type": "string",
       "allowedValues": [
         "xfce",
-        "mate",
-        "unity"
+        "mate"
       ],
+      "defaultValue": "mate",
       "description": "The desktop shell to use"
     }
   },

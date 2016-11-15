@@ -20,11 +20,11 @@ EOF
 
 unity()
 {
-  apt-get install ubuntu-desktop -y -qq
   if [ $(lsb_release -si) != "Ubuntu" ]; then
     (>&2 echo "This GUI shell only works on ubuntu")
     exit -1
   fi
+  apt-get install ubuntu-desktop -y -qq
   if [ $(uname -m) = "x86_64" ]; then
     ARCH=amd64
   else
@@ -52,7 +52,7 @@ EOF
 mate()
 {
   apt-get install xrdp -y -qq
-  apt-get install mate-desktop-environment -y -qq
+  apt-get install mate-core mate-desktop-environment mate-notification-daemon mate-tweak mate-dock-applet -y -qq
 (
 cat <<'EOF'
 #!/bin/sh
