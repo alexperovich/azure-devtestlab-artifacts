@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+  "title": "Google Chrome",
+  "description": "Installs Google Chrome",
+  "iconUri": "https://cdn.rawgit.com/Azure/azure-devtestlab/master/Artifacts/windows-chrome/Google_Chrome_icon.png",
+  "targetOsType": "Linux",
+  "parameters": {
+  },
+  "runCommand": {
+    "commandToExecute": "sh run-log.sh linux-chrome.log install-chrome.sh"
+  }
+}
