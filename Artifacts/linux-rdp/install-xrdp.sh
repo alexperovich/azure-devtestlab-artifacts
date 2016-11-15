@@ -1,10 +1,5 @@
 #!/bin/sh
 
-apt-get update
-apt-get install xrdp -yq
-eval $1
-service xrdp restart
-
 xfce()
 {
   apt-get install xfce4 -yq
@@ -55,3 +50,8 @@ mate-session
 EOF
 ) > /etc/xrdp/startwm.sh
 }
+
+apt-get update
+apt-get install xrdp -yq
+eval $1
+service xrdp restart
