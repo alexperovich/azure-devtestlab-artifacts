@@ -70,3 +70,4 @@ EOF
 apt-get update
 eval $1
 service xrdp restart
+shutdown -r now
