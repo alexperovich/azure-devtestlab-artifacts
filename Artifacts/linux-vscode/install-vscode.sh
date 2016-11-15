@@ -11,12 +11,10 @@ else
 fi
 
 case $(uname -m) in
-"x86_64"|
-"amd64")
+"x86_64" | "amd64")
   ARCH=x64
   ;;
-"x86"|
-"i386")
+"x86" | "i386")
   ARCH=x86
   ;;
 *)
