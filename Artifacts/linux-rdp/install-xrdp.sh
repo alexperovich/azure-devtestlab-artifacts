@@ -30,7 +30,7 @@ EOF
 ) > /etc/xrdp/startwm.sh
     shutdown -r +1
     ;;
-  "rhel:7.0" | "centos:7")
+  "rhel:7*" | "centos:7")
     wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     wget http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
     yum update
