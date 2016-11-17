@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2015-01-01/dtlArtifacts.json",
+  "title": ".NET Core CLI",
+  "description": "Installs .NET Core CLI",
+  "iconUri": "https://www.microsoft.com/favicon.ico",
+  "targetOsType": "Linux",
+  "parameters": {
+  },
+  "runCommand": {
+    "commandToExecute": "sh run-log.sh linux-dotnet.log install-dotnet.sh"
+  }
+}
