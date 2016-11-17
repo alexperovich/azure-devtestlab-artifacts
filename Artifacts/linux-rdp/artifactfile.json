@@ -5,17 +5,8 @@
   "iconUri": "http://www.xrdp.org/templates/rhuk_milkyway/images/xrdp_logo_nodarkfill-256x75.png",
   "targetOsType": "Linux",
   "parameters": {
-    "shell": {
-      "type": "string",
-      "allowedValues": [
-        "xfce",
-        "mate"
-      ],
-      "defaultValue": "mate",
-      "description": "The desktop shell to use"
-    }
   },
   "runCommand": {
-    "commandToExecute": "[concat('sh run-log.sh linux-rdp.log install-xrdp.sh ', parameters('shell'))]"
+    "commandToExecute": "sh run-log.sh linux-rdp.log install-xrdp.sh"
   }
 }
