@@ -59,7 +59,7 @@ case "$PACKAGEMANAGER" in
     echo "Failed to download package" 1>&2
     exit -1
   fi
-  yum update
+  yum -y update
   yum -y install code.rpm
   ;;
 esac
