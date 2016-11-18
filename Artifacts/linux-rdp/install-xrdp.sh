@@ -13,9 +13,13 @@ if [ -f /etc/os-release ]; then
   . /etc/os-release
   case "$ID:$VERSION_ID" in
   "ubuntu:14.04" | "ubuntu:16.04" | "ubuntu:16.10")
+    if [ $VERSION_ID = "14.04" ]; then
+      apt-add-repository -y ppa:ubuntu-mate-dev/ppa
+      apt-add-repository -y ppa:ubuntu-mate-dev/trusty-mate
+    fi
     apt-get update
     apt-get install xrdp -y -qq
-    apt-get install mate-core mate-desktop-environment mate-notification-daemon mate-tweak mate-dock-applet -y -qq
+    apt-get install ubuntu-mate-core ubuntu-mate-desktop -y -qq
 (
 cat <<'EOF'
 #!/bin/sh
