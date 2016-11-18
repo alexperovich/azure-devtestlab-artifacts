@@ -30,7 +30,7 @@ if [ -f /etc/os-release ]; then
     apt-get update
     apt-get install dotnet-dev-1.0.0-preview2.1-003177 -y -qq
     ;;
-  "rhel:7.0")
+  "rhel:7"*)
     subscription-manager repos --enable=rhel-7-server-dotnet-rpms
     yum -y install scl-utils
     yum -y install rh-dotnetcore11
