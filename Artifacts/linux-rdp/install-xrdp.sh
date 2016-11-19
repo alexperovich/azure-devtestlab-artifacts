@@ -35,13 +35,11 @@ EOF
     shutdown -r +1
     ;;
   "rhel:7"* | "centos:7")
-    wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    wget http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
     yum -y update
+    yum -y groupinstall "Server with GUI"
+    wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
     yum -y install epel-release-latest-7.noarch.rpm
-    yum -y install nux-dextop-release-0-5.el7.nux.noarch.rpm
-    yum -y install mate-desktop
-    yum -y install xrdp tigervnc-server
+    yum -y install xrdp
     systemctl enable xrdp.service
     firewall-cmd --permanent --zone=public --add-port=3389/tcp
     firewall-cmd --reload
