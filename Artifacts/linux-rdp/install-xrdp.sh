@@ -18,8 +18,8 @@ if [ -f /etc/os-release ]; then
       apt-add-repository -y ppa:ubuntu-mate-dev/trusty-mate
     fi
     apt-get update
+    apt-get install ubuntu-mate-desktop -y -qq
     apt-get install xrdp -y -qq
-    apt-get install ubuntu-mate-core ubuntu-mate-desktop -y -qq
 (
 cat <<'EOF'
 #!/bin/sh
