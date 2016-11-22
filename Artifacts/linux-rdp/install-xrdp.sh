@@ -32,7 +32,7 @@ fi
 mate-session
 EOF
 ) > /etc/xrdp/startwm.sh
-    shutdown -r +1
+    echo 'poweroff' | at now + 1 minute
     ;;
   "rhel:7"* | "centos:7")
     yum -y update
